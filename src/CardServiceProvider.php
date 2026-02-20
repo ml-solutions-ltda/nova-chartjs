@@ -1,6 +1,6 @@
 <?php
 
-namespace Coroowicaksono\ChartJsIntegration;
+namespace MlSolutions\ChartJsIntegration;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
@@ -33,7 +33,7 @@ class CardServiceProvider extends ServiceProvider
     protected function routes()
     {
         Route::middleware(['nova'])
-                ->prefix('/nova-vendor/coroowicaksono/check-data')
+                ->prefix('/nova-vendor/mlsolutions/check-data')
                 ->group(__DIR__.'/../routes/api.php');
     }
 

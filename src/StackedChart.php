@@ -1,6 +1,6 @@
 <?php
 
-namespace Coroowicaksono\ChartJsIntegration;
+namespace MlSolutions\ChartJsIntegration;
 
 use Laravel\Nova\Card;
 use Illuminate\Support\Str;
