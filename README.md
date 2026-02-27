@@ -23,6 +23,26 @@ A Laravel Nova Dashboard with Chart JS | See [:blue_book:Documentation Page](htt
 
 :mortar_board: For better experiences, we moved documentation to : __https://coroo.github.io/nova-chartjs/__
 
+## Security & Input Validation
+
+Recent versions validate chart query inputs more strictly to avoid SQL injection and ambiguous query behavior.
+
+- `model` must be an existing Eloquent model class.
+- `col_xaxis`, `join` columns, and filter keys must be valid identifiers (for example: `orders.created_at`).
+- Supported filter operators: `=`, `!=`, `<>`, `>`, `>=`, `<`, `<=`, `LIKE`, `NOT LIKE`, `ILIKE`, `NOT ILIKE`, `IS NULL`, `IS NOT NULL`, `IN`, `NOT IN`, `BETWEEN`, `NOT BETWEEN`.
+- `sum` accepts only numeric values or valid column identifiers.
+
+If your dashboard used raw SQL expressions in `sum`, `col_xaxis`, or filter keys/operators, adjust it to the supported format above.
+
+## Running Tests
+
+This package includes integration tests for the API endpoints, including `NOT IN`, `BETWEEN`, `join`, `uom=day`, and cache key isolation.
+
+```bash
+composer install
+composer test
+```
+
 ## ChangeLog
 
 Please see [CHANGELOG](https://github.com/coroo/chart-js-integration/blob/master/CHANGELOG.md) for more information on what has changed recently.
@@ -30,5 +50,4 @@ Please see [CHANGELOG](https://github.com/coroo/chart-js-integration/blob/master
 ## License
 
 The MIT License (MIT). Please see [License File](https://github.com/coroo/chart-js-integration/blob/master/LICENSE) for more information.
-
 
